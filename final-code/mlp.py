@@ -1,16 +1,15 @@
+import matplotlib.pyplot as plt
+from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
+from sklearn.preprocessing import StandardScaler
+from sklearn.model_selection import train_test_split
+from torch.utils.data import DataLoader, TensorDataset
+import numpy as np
+import pandas as pd
+import torch.nn as nn
+import torch
+import os
 import warnings
 warnings.filterwarnings('ignore')
-
-import os
-import torch
-import torch.nn as nn
-import pandas as pd
-import numpy as np
-from torch.utils.data import DataLoader, TensorDataset
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import StandardScaler
-from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
-import matplotlib.pyplot as plt
 
 
 class TabEncoder(nn.Module):
@@ -31,12 +30,12 @@ class TabEncoder(nn.Module):
 
 
 # -- Config --
-SEED       = 42
-EPOCHS     = 500
-LR         = 1e-3
+SEED = 42
+EPOCHS = 500
+LR = 1e-3
 BATCH_SIZE = 8
-DATA_PATH  = "/Users/manjilnepal/Downloads/Capstone-Final/data/new_ds.csv"
-SAVE_DIR   = "./results"
+DATA_PATH = "../data/trial_engineered_ds.csv"
+SAVE_DIR = "./results"
 
 os.makedirs(SAVE_DIR, exist_ok=True)
 torch.manual_seed(SEED)
@@ -66,8 +65,8 @@ X_train, X_val, y_train, y_val = train_test_split(
 sc = StandardScaler()
 
 X_train = sc.fit_transform(X_train)
-X_val   = sc.transform(X_val)
-X_test  = sc.transform(X_test)
+X_val = sc.transform(X_val)
+X_test = sc.transform(X_test)
 
 print(f'Train: {len(X_train)} | Val: {len(X_val)} | Test: {len(X_test)} | Features: {len(feature_cols)}')
 
@@ -129,27 +128,24 @@ for epoch in range(1, EPOCHS + 1):
 
         optimizer.step()
 
-
     # -- Evaluation --
     model.eval()
 
     with torch.no_grad():
 
         train_preds = model(X_train_t).cpu().numpy()
-        val_preds   = model(X_val_t).cpu().numpy()
-        test_preds  = model(X_test_t).cpu().numpy()
+        val_preds = model(X_val_t).cpu().numpy()
+        test_preds = model(X_test_t).cpu().numpy()
 
-
-    tr_mae  = mean_absolute_error(y_train, train_preds)
+    tr_mae = mean_absolute_error(y_train, train_preds)
     tr_rmse = np.sqrt(mean_squared_error(y_train, train_preds))
 
-    val_mae  = mean_absolute_error(y_val, val_preds)
+    val_mae = mean_absolute_error(y_val, val_preds)
     val_rmse = np.sqrt(mean_squared_error(y_val, val_preds))
 
-    te_mae  = mean_absolute_error(y_test, test_preds)
+    te_mae = mean_absolute_error(y_test, test_preds)
     te_rmse = np.sqrt(mean_squared_error(y_test, test_preds))
-    te_r2   = r2_score(y_test, test_preds)
-
+    te_r2 = r2_score(y_test, test_preds)
 
     history['train_mae'].append(tr_mae)
     history['train_rmse'].append(tr_rmse)
@@ -159,7 +155,6 @@ for epoch in range(1, EPOCHS + 1):
 
     history['test_mae'].append(te_mae)
     history['test_rmse'].append(te_rmse)
-
 
     if epoch % 10 == 0 or epoch == 1:
 
