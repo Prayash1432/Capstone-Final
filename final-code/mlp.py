@@ -34,7 +34,7 @@ SEED = 42
 EPOCHS = 500
 LR = 1e-3
 BATCH_SIZE = 8
-DATA_PATH = "../data/trial_engineered_ds.csv"
+DATA_PATH = "../data/trial.engineered_ds.csv"
 SAVE_DIR = "./results"
 
 os.makedirs(SAVE_DIR, exist_ok=True)

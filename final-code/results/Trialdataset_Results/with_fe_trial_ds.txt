@@ -50,14 +50,49 @@ Epoch [440/500] Train MAE: 0.5820 | Val MAE: 1.7708 | Test MAE: 1.6688 | Train R
 Epoch [450/500] Train MAE: 0.8109 | Val MAE: 1.9689 | Test MAE: 1.7046 | Train RMSE: 1.0619 | Val RMSE: 3.1534 | Test RMSE: 2.8500 | R²: 0.9922
 Epoch [460/500] Train MAE: 0.6008 | Val MAE: 1.8224 | Test MAE: 1.6517 | Train RMSE: 0.8451 | Val RMSE: 3.1560 | Test RMSE: 2.8139 | R²: 0.9924
 Epoch [470/500] Train MAE: 0.6053 | Val MAE: 1.8198 | Test MAE: 1.6922 | Train RMSE: 0.8538 | Val RMSE: 3.2336 | Test RMSE: 2.7779 | R²: 0.9926
+Epoch [430/500] Train MAE: 0.6809 | Val MAE: 1.9838 | Test MAE: 1.7663 | Train RMSE: 0.9354 | Val RMSE: 3.2354 | Test RMSE: 2.8701 | R²: 0.9921
+Epoch [440/500] Train MAE: 0.5820 | Val MAE: 1.7708 | Test MAE: 1.6688 | Train RMSE: 0.8557 | Val RMSE: 3.1897 | Test RMSE: 2.8813 | R²: 0.9920
+Epoch [450/500] Train MAE: 0.8109 | Val MAE: 1.9689 | Test MAE: 1.7046 | Train RMSE: 1.0619 | Val RMSE: 3.1534 | Test RMSE: 2.8500 | R²: 0.9922
+Epoch [460/500] Train MAE: 0.6008 | Val MAE: 1.8224 | Test MAE: 1.6517 | Train RMSE: 0.8451 | Val RMSE: 3.1560 | Test RMSE: 2.8139 | R²: 0.9924
+Epoch [470/500] Train MAE: 0.6053 | Val MAE: 1.8198 | Test MAE: 1.6922 | Train RMSE: 0.8538 | Val RMSE: 3.2336 | Test RMSE: 2.7779 | R²: 0.9926
+9921
+Epoch [440/500] Train MAE: 0.5820 | Val MAE: 1.7708 | Test MAE: 1.6688 | Train RMSE: 0.8557 | Val RMSE: 3.1897 | Test RMSE: 2.8813 | R²: 0.9920
+Epoch [450/500] Train MAE: 0.8109 | Val MAE: 1.9689 | Test MAE: 1.7046 | Train RMSE: 1.0619 | Val RMSE: 3.1534 | Test RMSE: 2.8500 | R²: 0.9922
+Epoch [460/500] Train MAE: 0.6008 | Val MAE: 1.8224 | Test MAE: 1.6517 | Train RMSE: 0.8451 | Val RMSE: 3.1560 | Test RMSE: 2.8139 | R²: 0.9924
+Epoch [470/500] Train MAE: 0.6053 | Val MAE: 1.8198 | Test MAE: 1.6922 | Train RMSE: 0.8538 | Val RMSE: 3.2336 | Test RMSE: 2.7779 | R²: 0.9926
+Epoch [440/500] Train MAE: 0.5820 | Val MAE: 1.7708 | Test MAE: 1.6688 | Train RMSE: 0.8557 | Val RMSE: 3.1897 | Test RMSE: 2.8813 | R²: 0.9920
+Epoch [450/500] Train MAE: 0.8109 | Val MAE: 1.9689 | Test MAE: 1.7046 | Train RMSE: 1.0619 | Val RMSE: 3.1534 | Test RMSE: 2.8500 | R²: 0.9922
+Epoch [460/500] Train MAE: 0.6008 | Val MAE: 1.8224 | Test MAE: 1.6517 | Train RMSE: 0.8451 | Val RMSE: 3.1560 | Test RMSE: 2.8139 | R²: 0.9924
+Epoch [470/500] Train MAE: 0.6053 | Val MAE: 1.8198 | Test MAE: 1.6922 | Train RMSE: 0.8538 | Val RMSE: 3.2336 | Test RMSE: 2.7779 | R²: 0.9926
+9920
+Epoch [450/500] Train MAE: 0.8109 | Val MAE: 1.9689 | Test MAE: 1.7046 | Train RMSE: 1.0619 | Val RMSE: 3.1534 | Test RMSE: 2.8500 | R²: 0.9922
+Epoch [460/500] Train MAE: 0.6008 | Val MAE: 1.8224 | Test MAE: 1.6517 | Train RMSE: 0.8451 | Val RMSE: 3.1560 | Test RMSE: 2.8139 | R²: 0.9924
+Epoch [470/500] Train MAE: 0.6053 | Val MAE: 1.8198 | Test MAE: 1.6922 | Train RMSE: 0.8538 | Val RMSE: 3.2336 | Test RMSE: 2.7779 | R²: 0.9926
+9922
+Epoch [460/500] Train MAE: 0.6008 | Val MAE: 1.8224 | Test MAE: 1.6517 | Train RMSE: 0.8451 | Val RMSE: 3.1560 | Test RMSE: 2.8139 | R²: 0.9924
+Epoch [470/500] Train MAE: 0.6053 | Val MAE: 1.8198 | Test MAE: 1.6922 | Train RMSE: 0.8538 | Val RMSE: 3.2336 | Test RMSE: 2.7779 | R²: 0.9926
 Epoch [480/500] Train MAE: 0.6186 | Val MAE: 1.7938 | Test MAE: 1.6067 | Train RMSE: 0.8736 | Val RMSE: 3.2494 | Test RMSE: 2.8224 | R²: 0.9924
-Epoch [490/500] Train MAE: 0.6274 | Val MAE: 1.8513 | Test MAE: 1.6804 | Train RMSE: 0.9151 | Val RMSE: 3.1201 | Test RMSE: 2.7319 | R²: 0.9928
+9924
+Epoch [470/500] Train MAE: 0.6053 | Val MAE: 1.8198 | Test MAE: 1.6922 | Train RMSE: 0.8538 | Val RMSE: 3.2336 | Test RMSE: 2.7779 | R²: 0.9926
+Epoch [480/500] Train MAE: 0.6186 | Val MAE: 1.7938 | Test MAE: 1.6067 | Train RMSE: 0.8736 | Val RMSE: 3.2494 | Test RMSE: 2.8224 | R²: 0.9924
+Epoch [480/500] Train MAE: 0.6186 | Val MAE: 1.7938 | Test MAE: 1.6067 | Train RMSE: 0.8736 | Val RMSE: 3.2494 | Test RMSE: 2.8224 | R²: 0.9924
+Epoch [490/500] Train MAE: 0.6274 | Val MAE: 1.8513 | Test MAE: 1.6804 | Train RMSE: 0.9151 | Val RMSE: 3.1201 | Test RMSE: 2.7319 | R²: 0.Epoch [490/500] Train MAE: 0.6274 | Val MAE: 1.8513 | Test MAE: 1.6804 | Train RMSE: 0.9151 | Val RMSE: 3.1201 | Test RMSE: 2.7319 | R²: 0.9928
+Epoch [500/500] Train MAE: 0.5523 | Val MAE: 1.7690 | Test MAE: 1.5773 | Train RMSE: 0.7994 | Val RMSE: 3.1172 | Test RMSE: 2.7726 | R²: 0.9928
 Epoch [500/500] Train MAE: 0.5523 | Val MAE: 1.7690 | Test MAE: 1.5773 | Train RMSE: 0.7994 | Val RMSE: 3.1172 | Test RMSE: 2.7726 | R²: 0.9926
 
 ════════════════════════════════════════════════════════════
+9926
+
+════════════════════════════════════════════════════════════
+FINAL TEST RESULTS
+
+════════════════════════════════════════════════════════════
+FINAL TEST RESULTS
 FINAL TEST RESULTS
 ════════════════════════════════════════════════════════════
+════════════════════════════════════════════════════════════
 MAE: 1.5773
+RMSE: 2.7726
 RMSE: 2.7726
 R²: 0.9926
 ════════════════════════════════════════════════════════════
