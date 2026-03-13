@@ -34,7 +34,7 @@ SEED = 42
 EPOCHS = 500
 LR = 1e-3
 BATCH_SIZE = 8
-DATA_PATH = "../data/trial.engineered_ds.csv"
+DATA_PATH = "/Users/manjilnepal/Downloads/Capstone-Final/final-code/augmented_train_df.csv"
 SAVE_DIR = "./results"
 
 os.makedirs(SAVE_DIR, exist_ok=True)
@@ -43,27 +43,23 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 
 # -- Load data --
-df = pd.read_csv(DATA_PATH).drop(columns=['CS 7 day (Mpa)'])
+df = pd.read_csv(DATA_PATH)
+# .drop(columns=['CS 7 day (Mpa)'])
 
-feature_cols = df.columns.tolist()[:-6]
-
+feature_cols = df.drop(columns=['CS 28 day (Mpa)']).keys()
 X = df[feature_cols].values.astype(np.float32)
+print(f'Total Features: {len(feature_cols)}')
+
 y = df['CS 28 day (Mpa)'].values.astype(np.float32)
 
 
 # -- Train / Validation / Test split --
-X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=0.2, random_state=SEED
-)
-
-X_train, X_val, y_train, y_val = train_test_split(
-    X_train, y_train, test_size=0.2, random_state=SEED
-)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=SEED)
+X_train, X_val, y_train, y_val = train_test_split(X_train, y_train, test_size=0.2, random_state=SEED)
 
 
 # -- Scaling --
 sc = StandardScaler()
-
 X_train = sc.fit_transform(X_train)
 X_val = sc.transform(X_val)
 X_test = sc.transform(X_test)
@@ -82,25 +78,16 @@ X_test_t = torch.tensor(X_test).to(device)
 y_test_t = torch.tensor(y_test).to(device)
 
 
-train_loader = DataLoader(
-    TensorDataset(X_train_t, y_train_t),
-    batch_size=BATCH_SIZE,
-    shuffle=True
-)
+train_loader = DataLoader(TensorDataset(X_train_t, y_train_t), batch_size=BATCH_SIZE, shuffle=True)
 
 
-# -- Model --
+# -- model, loss_fn, optmimizer --
 model = TabEncoder(input_dim=len(feature_cols)).to(device)
-
 loss_fn = nn.MSELoss()
-
-optimizer = torch.optim.Adam(
-    model.parameters(),
-    lr=LR
-)
+optimizer = torch.optim.Adam(model.parameters(), lr=LR)
 
 
-# -- Metrics history --
+# -- metrics history --
 history = {
     'train_mae': [], 'train_rmse': [],
     'val_mae': [], 'val_rmse': [],
@@ -111,7 +98,7 @@ history = {
 print(f'\nTraining for {EPOCHS} epochs...\n')
 
 
-# -- Training loop --
+# -- training loop --
 for epoch in range(1, EPOCHS + 1):
 
     model.train()
@@ -128,7 +115,7 @@ for epoch in range(1, EPOCHS + 1):
 
         optimizer.step()
 
-    # -- Evaluation --
+    # -- evaluation --
     model.eval()
 
     with torch.no_grad():
@@ -175,29 +162,17 @@ print(f'R²: {te_r2:.4f}')
 print(f'{"═"*60}\n')
 
 
-# -- Plot --
+# -- plot --
 fig, axes = plt.subplots(1, 2, figsize=(8, 3.5))
 
 for ax, key, title in zip(axes, ['mae', 'rmse'], ['MAE', 'RMSE']):
-
     ax.plot(history[f'train_{key}'], label='Train', linewidth=2)
-
     ax.plot(history[f'val_{key}'], label='Validation', linewidth=2)
-
     ax.plot(history[f'test_{key}'], label='Test', linewidth=2)
-
     ax.set(title=title, xlabel='Epoch', ylabel=title)
-
     ax.legend()
-
     ax.grid(alpha=0.3)
 
-
 plt.tight_layout()
-
-plt.savefig(
-    os.path.join(SAVE_DIR, 'with_fe_trial_mlp_plot.png'),
-    dpi=300
-)
-
+plt.savefig(os.path.join(SAVE_DIR, 'demo_with_fe_trial_mlp_plot.png'), dpi=300)
 plt.close()
