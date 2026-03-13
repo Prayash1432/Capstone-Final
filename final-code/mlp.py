@@ -196,7 +196,7 @@ for ax, key, title in zip(axes, ['mae', 'rmse'], ['MAE', 'RMSE']):
 plt.tight_layout()
 
 plt.savefig(
-    os.path.join(SAVE_DIR, 'without_fe_mlp_plot.png'),
+    os.path.join(SAVE_DIR, 'with_fe_trial_mlp_plot.png'),
     dpi=300
 )
 
